@@ -67,6 +67,7 @@ client.on("message", message => {
             }
         }, 1000) 
       }
+    });
     
 client.on("message", message => {
     if(message.content.toLowerCase() == "!timer 120")
