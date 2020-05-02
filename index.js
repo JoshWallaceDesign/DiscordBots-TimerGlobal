@@ -68,7 +68,64 @@ client.on("message", message => {
         }, 1000) 
       }
     
+client.on("message", message => {
+    if(message.content.toLowerCase() == "!timer 120")
+    if(message.member.roles.some(r => r.name === "Timer"))
+    
+    {   clearInterval(clock);
+        message.channel.send("120 SECONDS ON THE CLOCK \nOhlalalala!!")
+        let timer = 120;
+        clock = setInterval(() => {
+            timer--;
+            console.log(timer);
+            if (timer == 120)
+            {
+                message.channel.send({embed :{
+                    color: 3066993,
+                    title: timer +  " Seconds Left"
+                }})
+            }
+            if(timer == 90)
+            {
+                message.channel.send({embed :{
+                    color: 3066993,
+                    title: timer +  " Seconds Left"
+                }})
+            }
+            if(timer == 60)
+            {
+                message.channel.send({embed :{
+                    color: 15105570,
+                    title: timer +  " Seconds Left"
+                }})
+            }
+            if(timer == 30)
+            {
+                message.channel.send({embed :{
+                    color: 15105570,
+                    title: timer +  " Seconds Left"
+                }})
+            }
+            if(timer == 10)
+            {
+                message.channel.send({embed :{
+                    color: 15158332,
+                    title: timer +  " Seconds Left"
+                }})
+            }
+            if(timer == 0)
+            {
+                clearInterval(clock);
+                message.channel.send({embed :{
+                    color: 15158332,
+                    title: "...TIME..."
+                }})
+            }
+        }, 1000) 
+      }    
+    
 });
+    
 client.on("message", message => {
     if(message.content.toLowerCase() == "!timer 90")
     if(message.member.roles.some(r => r.name === "Timer"))    
